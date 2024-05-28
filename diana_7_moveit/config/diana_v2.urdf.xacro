@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="diana_v2">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import diana_v2 urdf file -->
+    <xacro:include filename="$(find diana7_description)/urdf/diana_v2.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="diana_v2.ros2_control.xacro" />
+
+
+    <xacro:diana_v2_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>
